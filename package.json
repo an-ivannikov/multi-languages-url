@@ -1,5 +1,5 @@
 {
-  "name": "multilanguage-url",
+  "name": "multi-languages-url",
   "version": "1.0.0",
   "description": "This simple tool for creating URL links adapted to the current language of the web application.",
   "keywords": [
@@ -10,16 +10,16 @@
   "main": "index.js",
   "author": "Alexander Ivannikov <a.n.ivannikov@yandex.ru> (https://github.com/an-ivannikov)",
   "license": "MIT",
-  "homepage": "https://github.com/an-ivannikov/multilanguage-url",
+  "homepage": "https://github.com/an-ivannikov/multi-languages-url",
   "repository": {
     "type": "git",
-    "url": "https://github.com/an-ivannikov/multilanguage-url.git"
+    "url": "https://github.com/an-ivannikov/multi-languages-url.git"
   },
   "bugs": {
-    "url": "https://github.com/an-ivannikov/multilanguage-url/issues"
+    "url": "https://github.com/an-ivannikov/multi-languages-url/issues"
   },
   "scripts": {
-    "jsdoc": "./node_modules/.bin/jsdoc --destination ./doc --readme ./README.md ./dist/commonjs/index.js",
+    "jsdoc": "./node_modules/.bin/jsdoc --destination ./docs --readme ./README.md ./dist/commonjs/index.js",
     "jsdoc2md": "./node_modules/.bin/jsdoc2md ./dist/commonjs/index.js",
     "clean": "rimraf dist && mkdirp dist",
     "copy": "cp ./dist/umd/MultiLanguageURL.min.js ./MultiLanguageURL.min.js && cp ./dist/umd/MultiLanguageURL.js ./MultiLanguageURL.js",
