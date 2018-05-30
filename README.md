@@ -19,12 +19,12 @@ or
 ```
 
 
-
 <a name="MultiLanguagesURL"></a>
 
 ## MultiLanguagesURL
 **Kind**: global class  
 **this**: <code>{MultiLanguagesURL}</code>  
+**Author**: Alexander Ivannikov <a.n.ivannikov@yandex.ru> (https://github.com/an-ivannikov)  
 
 * [MultiLanguagesURL](#MultiLanguagesURL)
     * [new MultiLanguagesURL(options)](#new_MultiLanguagesURL_new)
@@ -42,7 +42,7 @@ Forms the base of the path `this.rootLanguagePath` for subsequent substitution t
 | Param | Type | Description |
 | --- | --- | --- |
 | options | <code>Object</code> | Required. Parameter object. Comprises: |
-| options.languages | <code>Array</code> | ​​Required. List of allowed languages. |
+| options.languages | <code>Array</code> | Required. List of allowed languages. |
 | options.pathname | <code>String</code> | Optional. The default path is `window.location.pathname`. |
 
 <a name="MultiLanguagesURL+url"></a>
@@ -54,7 +54,6 @@ The method substitutes the created path base to the incoming location url.
 **Returns**: <code>String</code> - A reference of the form `this.rootLanguagePath` + `/pathname` + `search` +` hash`.  
 **this**: <code>{MultiLanguagesURL}</code>  
 
-#### Option 1.  
 | Param | Type | Description |
 | --- | --- | --- |
 | location | <code>Object</code> | Required. The reference object is similar to `window.location`. Comprises: |
@@ -62,7 +61,14 @@ The method substitutes the created path base to the incoming location url.
 | location.search | <code>String</code> | Optional. The request is similar to `window.location.search`. |
 | location.hash | <code>String</code> | Optional. The hash is similar to `window.location.hash`. |
 
-#### Option 2.  
+
+### multiLanguagesURL.url(location, search, hash) ⇒ <code>String</code>
+The method substitutes the created path base to the incoming location url.
+
+**Kind**: instance method of [<code>MultiLanguagesURL</code>](#MultiLanguagesURL)  
+**Returns**: <code>String</code> - A reference of the form `this.rootLanguagePath` + `/pathname` + `search` +` hash`.  
+**this**: <code>{MultiLanguagesURL}</code>
+
 | Param | Type | Description |
 | --- | --- | --- |
 | location | <code>String</code> | Required. The path is similar to `window.location.pathname`. |

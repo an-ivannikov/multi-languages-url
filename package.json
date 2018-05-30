@@ -3,9 +3,14 @@
   "version": "1.1.0",
   "description": "This simple tool for creating URL links adapted to the current language of the web application.",
   "keywords": [
-    "multilanguage", "internationalization", "localization",
-    "url", "link",
-    "browser", "react", "web app"
+    "multilanguage",
+    "internationalization",
+    "localization",
+    "url",
+    "link",
+    "browser",
+    "react",
+    "web app"
   ],
   "main": "index.js",
   "author": "Alexander Ivannikov <a.n.ivannikov@yandex.ru> (https://github.com/an-ivannikov)",

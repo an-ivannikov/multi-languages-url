@@ -8,17 +8,19 @@
 
   /**
    * The class of the multilanguage page location url.
-   * Extracts from `window.location.pathname` one of the list of valid languages ​​and insertes it at the beginning of the incoming location url.
+   * Extracts from `window.location.pathname` one of the list of valid languages ​​and insertes it at the beginning of the incoming location url.
    *
-   * Forms the base of the path `this.rootLanguagePath` for subsequent substitution to the incoming location url.
-   *
-   * @constructor
-   * @this {MultiLanguagesURL}
-   *
-   * @param {Object} options - Required. Parameter object. Comprises:
-   * @param {Array} options.languages - Required. List of allowed languages.
-   * @param {String} options.pathname - Optional. The default path is `window.location.pathname`.
-   */
+   * Forms the base of the path `this.rootLanguagePath` for subsequent substitution to the incoming location url.
+   *
+   *@author Alexander Ivannikov <a.n.ivannikov@yandex.ru> (https://github.com/an-ivannikov)
+   *
+   * @constructor
+   * @this {MultiLanguagesURL}
+   *
+   * @param {Object} options - Required. Parameter object. Comprises:
+   * @param {Array} options.languages - Required. List of allowed languages.
+   * @param {String} options.pathname - Optional. The default path is `window.location.pathname`.
+   */
 
   function MultiLanguagesURL(options) {
     /** @private */
@@ -49,14 +51,14 @@
   }
 
   /**
-   * The method substitutes the created path base to the incoming location url.
-   *
-   * @this {MultiLanguagesURL}
-   *
+   * The method substitutes the created path base to the incoming location url.
+   *
+   * @this {MultiLanguagesURL}
+   *
    * Option 1.
-   * @param {String} location - Required. The path is similar to `window.location.pathname`.
-   * @param {String} search - Optional. The request is similar to `window.location.search`.
-   * @param {String} hash - Optional. The hash is similar to `window.location.hash`.
+   * @param {String} location - Required. The path is similar to `window.location.pathname`.
+   * @param {String} search - Optional. The request is similar to `window.location.search`.
+   * @param {String} hash - Optional. The hash is similar to `window.location.hash`.
    *
    * @return {String} A reference of the form `this.rootLanguagePath` + `/pathname` + `search` +` hash`.
    */
