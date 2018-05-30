@@ -1,0 +1,60 @@
+{
+  "name": "multilanguage-url",
+  "version": "1.0.0",
+  "description": "This simple tool for creating URL links adapted to the current language of the web application.",
+  "keywords": [
+    "multilanguage", "internationalization", "localization",
+    "url", "link",
+    "browser", "react", "web app"
+  ],
+  "main": "index.js",
+  "author": "Alexander Ivannikov <a.n.ivannikov@yandex.ru> (https://github.com/an-ivannikov)",
+  "license": "MIT",
+  "homepage": "https://github.com/an-ivannikov/multilanguage-url",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/an-ivannikov/multilanguage-url.git"
+  },
+  "bugs": {
+    "url": "https://github.com/an-ivannikov/multilanguage-url/issues"
+  },
+  "scripts": {
+    "jsdoc": "./node_modules/.bin/jsdoc --destination ./doc --readme ./README.md ./dist/commonjs/index.js",
+    "jsdoc2md": "./node_modules/.bin/jsdoc2md ./dist/commonjs/index.js",
+    "clean": "rimraf dist && mkdirp dist",
+    "copy": "cp ./dist/umd/MultiLanguageURL.min.js ./MultiLanguageURL.min.js && cp ./dist/umd/MultiLanguageURL.js ./MultiLanguageURL.js",
+    "copy:win": "copy dist\\umd\\MultiLanguageURL.min.js MultiLanguageURL.min.js && copy dist\\umd\\MultiLanguageURL.js MultiLanguageURL.js",
+    "build:win:es": "SET BABEL_ENV=jsnext && babel src --out-dir dist/es",
+    "build:es": "BABEL_ENV=jsnext babel src --out-dir dist/es",
+    "build:cjs": "babel src --out-dir dist/commonjs",
+    "build:umd": "rollup -c rollup.config.js --format umd && rollup -c rollup.config.js --format umd --uglify",
+    "build:amd": "rollup -c rollup.config.js --format amd && rollup -c rollup.config.js --format umd --uglify",
+    "build:iife": "rollup -c rollup.config.js --format iife && rollup -c rollup.config.js --format iife --uglify",
+    "build": "npm run clean && npm run build:cjs && npm run build:es && npm run build:umd && npm run copy",
+    "build:win": "npm run clean && npm run build:cjs && npm run build:win:es && npm run build:umd && npm run copy:win",
+    "preversion": "npm run build && git push",
+    "preversion:win": "npm run build:win && git push",
+    "postversion": "git push && git push --tags"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "6.22.2",
+    "babel-core": "6.22.1",
+    "babel-eslint": "7.1.1",
+    "babel-plugin-external-helpers": "6.22.0",
+    "babel-plugin-transform-es2015-classes": "6.22.0",
+    "babel-preset-es2015": "6.22.0",
+    "babel-preset-stage-0": "6.22.0",
+    "eslint": "2.8.0",
+    "eslint-config-airbnb": "7.0.0",
+    "jsdoc": "^3.5.5",
+    "jsdoc-to-markdown": "^4.0.1",
+    "mkdirp": "0.5.1",
+    "rimraf": "2.5.2",
+    "rollup": "0.25.8",
+    "rollup-plugin-babel": "2.4.0",
+    "rollup-plugin-node-resolve": "1.7.1",
+    "rollup-plugin-uglify": "0.2.0",
+    "yargs": "4.6.0"
+  }
+}
