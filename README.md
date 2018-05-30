@@ -4,12 +4,12 @@ This simple tool for creating URL links adapted to the current language of the w
 
 ## Installing
 ```js
-$ npm install --save multi-language-url
+$ npm install --save multi-languages-url
 ```
 
 ## Usage
 ```js
-import MultiLanguageURL from 'multi-language-url';
+import MultiLanguageURL from 'multi-languages-url';
 ...
 const ml = new MultiLanguageURL({languages: ['en', 'de', 'ru']});
 <a href={ml.url('/blog')}>Blog</a>

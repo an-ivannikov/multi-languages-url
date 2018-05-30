@@ -1,6 +1,6 @@
 {
   "name": "multi-languages-url",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This simple tool for creating URL links adapted to the current language of the web application.",
   "keywords": [
     "multilanguage", "internationalization", "localization",
