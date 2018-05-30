@@ -13,9 +13,9 @@ const babelOptions = {
 };
 
 const dest = {
-  amd: `dist/amd/MultiLanguageURL${compress ? '.min' : ''}.js`,
-  umd: `dist/umd/MultiLanguageURL${compress ? '.min' : ''}.js`,
-  iife: `dist/iife/MultiLanguageURL${compress ? '.min' : ''}.js`
+  amd: `dist/amd/MultiLanguagesURL${compress ? '.min' : ''}.js`,
+  umd: `dist/umd/MultiLanguagesURL${compress ? '.min' : ''}.js`,
+  iife: `dist/iife/MultiLanguagesURL${compress ? '.min' : ''}.js`
 }[format];
 
 export default {
@@ -25,7 +25,7 @@ export default {
     babel(babelOptions),
     nodeResolve({ jsnext: true })
   ].concat(compress ? uglify() : []),
-  moduleName: 'MultiLanguageURL',
-  // moduleId: 'MultiLanguageURL',
+  moduleName: 'MultiLanguagesURL',
+  // moduleId: 'MultiLanguagesURL',
   dest
 };

@@ -13,14 +13,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
  * Forms the base of the path `this.rootLanguagePath` for subsequent substitution to the incoming location url.
  *
  * @constructor
- * @this {MultiLanguageURL}
+ * @this {MultiLanguagesURL}
  *
  * @param {Object} options - Required. Parameter object. Comprises:
- * @param {Array} options.languages ​​- Required. List of allowed languages.
+ * @param {Array} options.languages - Required. List of allowed languages.
  * @param {String} options.pathname - Optional. The default path is `window.location.pathname`.
  */
 
-function MultiLanguageURL(options) {
+function MultiLanguagesURL(options) {
   /** @private */
   this.rootLanguagePath = '';
 
@@ -51,8 +51,22 @@ function MultiLanguageURL(options) {
 /**
  * The method substitutes the created path base to the incoming location url.
  *
- * @this {MultiLanguageURL}
+ * @this {MultiLanguagesURL}
  *
+ * Option 1.
+ * @param {String} location - Required. The path is similar to `window.location.pathname`.
+ * @param {String} search - Optional. The request is similar to `window.location.search`.
+ * @param {String} hash - Optional. The hash is similar to `window.location.hash`.
+ *
+ * @return {String} A reference of the form `this.rootLanguagePath` + `/pathname` + `search` +` hash`.
+ */
+
+/**
+ * The method substitutes the created path base to the incoming location url.
+ *
+ * @this {MultiLanguagesURL}
+ *
+ * Option 2.
  * @param {Object} location - Required. The reference object is similar to `window.location`. Comprises:
  * @param {String} location.pathname - Required. The path is similar to `window.location.pathname`.
  * @param {String} location.search - Optional. The request is similar to `window.location.search`.
@@ -61,8 +75,11 @@ function MultiLanguageURL(options) {
  * @return {String} A reference of the form `this.rootLanguagePath` + `/pathname` + `search` +` hash`.
  */
 
-MultiLanguageURL.prototype.url = function (location) {
-  return this.rootLanguagePath + location.pathname + (location.search !== undefined ? location.search : '') + (location.hash !== undefined ? location.hash : '');
+MultiLanguagesURL.prototype.url = function (location, search, hash) {
+  if ((typeof location === 'undefined' ? 'undefined' : _typeof(location)) === 'object') {
+    return this.rootLanguagePath + location.pathname + (location.search !== undefined ? location.search : '') + (location.hash !== undefined ? location.hash : '');
+  }
+  return this.rootLanguagePath + location + (search !== undefined ? search : '') + (hash !== undefined ? hash : '');
 };
 
-exports.default = MultiLanguageURL;
+exports.default = MultiLanguagesURL;

@@ -1,6 +1,6 @@
 {
-  "name": "multilanguage-url",
-  "main": "./MultiLanguageURL.js",
+  "name": "multi-languages-url",
+  "main": "./MultiLanguagesURL.js",
   "dependencies": {},
   "ignore": [
     "test/",

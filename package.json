@@ -1,6 +1,6 @@
 {
   "name": "multi-languages-url",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "This simple tool for creating URL links adapted to the current language of the web application.",
   "keywords": [
     "multilanguage", "internationalization", "localization",
@@ -22,8 +22,8 @@
     "jsdoc": "./node_modules/.bin/jsdoc --destination ./docs --readme ./README.md ./dist/commonjs/index.js",
     "jsdoc2md": "./node_modules/.bin/jsdoc2md ./dist/commonjs/index.js",
     "clean": "rimraf dist && mkdirp dist",
-    "copy": "cp ./dist/umd/MultiLanguageURL.min.js ./MultiLanguageURL.min.js && cp ./dist/umd/MultiLanguageURL.js ./MultiLanguageURL.js",
-    "copy:win": "copy dist\\umd\\MultiLanguageURL.min.js MultiLanguageURL.min.js && copy dist\\umd\\MultiLanguageURL.js MultiLanguageURL.js",
+    "copy": "cp ./dist/umd/MultiLanguagesURL.min.js ./MultiLanguagesURL.min.js && cp ./dist/umd/MultiLanguagesURL.js ./MultiLanguagesURL.js",
+    "copy:win": "copy dist\\umd\\MultiLanguagesURL.min.js MultiLanguagesURL.min.js && copy dist\\umd\\MultiLanguagesURL.js MultiLanguagesURL.js",
     "build:win:es": "SET BABEL_ENV=jsnext && babel src --out-dir dist/es",
     "build:es": "BABEL_ENV=jsnext babel src --out-dir dist/es",
     "build:cjs": "babel src --out-dir dist/commonjs",

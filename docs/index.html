@@ -21,22 +21,26 @@
 
     <h3> </h3>
 
+
     <section>
-        <article><h1>MultiLanguage URL</h1><p>This simple tool for creating URL links adapted to the current language of the web application.</p>
-<h2>Installing</h2><pre class="prettyprint source lang-js"><code>$ npm install --save multi-languages-url</code></pre><h2>Usage</h2><pre class="prettyprint source lang-js"><code>import MultiLanguageURL from 'multi-languages-url';
+        <article><h1>Multi Languages URL</h1><p>This simple tool for creating URL links adapted to the current language of the web application.</p>
+<h2>Installing</h2><pre class="prettyprint source lang-js"><code>$ npm install --save multi-languages-url</code></pre><h2>Usage</h2><pre class="prettyprint source lang-js"><code>import MultiLanguagesURL from 'multi-languages-url';
 ...
-const ml = new MultiLanguageURL({languages: ['en', 'de', 'ru']});
-&lt;a href={ml.url('/blog')}>Blog&lt;/a></code></pre><p><a name="MultiLanguageURL"></a></p>
-<h2>MultiLanguageURL</h2><p><strong>Kind</strong>: global class<br><strong>this</strong>: <code>{MultiLanguageURL}</code>  </p>
+const ml = new MultiLanguagesURL({languages: ['en', 'de', 'ru']});
+...
+&lt;a href={ml.url('/blog', '?q=last', '#news')}>Blog&lt;/a>
+or
+&lt;a href={ml.url({pathname: '/blog', search: '?q=last', hash: '#news'})}>Blog&lt;/a></code></pre><p><a name="MultiLanguagesURL"></a></p>
+<h2>MultiLanguagesURL</h2><p><strong>Kind</strong>: global class<br><strong>this</strong>: <code>{MultiLanguagesURL}</code>  </p>
 <ul>
-<li><a href="#MultiLanguageURL">MultiLanguageURL</a><ul>
-<li><a href="#new_MultiLanguageURL_new">new MultiLanguageURL(options)</a></li>
-<li><a href="#MultiLanguageURL+url">.url(location)</a> ⇒ <code>String</code></li>
+<li><a href="#MultiLanguagesURL">MultiLanguagesURL</a><ul>
+<li><a href="#new_MultiLanguagesURL_new">new MultiLanguagesURL(options)</a></li>
+<li><a href="#MultiLanguagesURL+url">.url(location)</a> ⇒ <code>String</code></li>
 </ul>
 </li>
 </ul>
-<p><a name="new_MultiLanguageURL_new"></a></p>
-<h3>new MultiLanguageURL(options)</h3><p>The class of the multilanguage page location url.
+<p><a name="new_MultiLanguagesURL_new"></a></p>
+<h3>new MultiLanguagesURL(options)</h3><p>The class of the multilanguage page location url.
 Extracts from <code>window.location.pathname</code> one of the list of valid languages ​​and insertes it at the beginning of the incoming location url.</p>
 <p>Forms the base of the path <code>this.rootLanguagePath</code> for subsequent substitution to the incoming location url.</p>
 <table>
@@ -65,10 +69,10 @@ Extracts from <code>window.location.pathname</code> one of the list of valid lan
 </tr>
 </tbody>
 </table>
-<p><a name="MultiLanguageURL+url"></a></p>
-<h3>multiLanguageURL.url(location) ⇒ <code>String</code></h3><p>The method substitutes the created path base to the incoming location url.</p>
-<p><strong>Kind</strong>: instance method of <a href="#MultiLanguageURL"><code>MultiLanguageURL</code></a><br><strong>Returns</strong>: <code>String</code> - A reference of the form <code>this.rootLanguagePath</code> + <code>/pathname</code> + <code>search</code> +<code>hash</code>.<br><strong>this</strong>: <code>{MultiLanguageURL}</code>  </p>
-<table>
+<p><a name="MultiLanguagesURL+url"></a></p>
+<h3>multiLanguagesURL.url(location) ⇒ <code>String</code></h3><p>The method substitutes the created path base to the incoming location url.</p>
+<p><strong>Kind</strong>: instance method of <a href="#MultiLanguagesURL"><code>MultiLanguagesURL</code></a><br><strong>Returns</strong>: <code>String</code> - A reference of the form <code>this.rootLanguagePath</code> + <code>/pathname</code> + <code>search</code> +<code>hash</code>.<br><strong>this</strong>: <code>{MultiLanguagesURL}</code>  </p>
+<h4>Option 1.</h4><table>
 <thead>
 <tr>
 <th>Param</th>
@@ -98,20 +102,50 @@ Extracts from <code>window.location.pathname</code> one of the list of valid lan
 <td>Optional. The hash is similar to <code>window.location.hash</code>.</td>
 </tr>
 </tbody>
+</table>
+<h4>Option 2.</h4><table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>location</td>
+<td><code>String</code></td>
+<td>Required. The path is similar to <code>window.location.pathname</code>.</td>
+</tr>
+<tr>
+<td>search</td>
+<td><code>String</code></td>
+<td>Optional. The request is similar to <code>window.location.search</code>.</td>
+</tr>
+<tr>
+<td>hash</td>
+<td><code>String</code></td>
+<td>Optional. The hash is similar to <code>window.location.hash</code>.</td>
+</tr>
+</tbody>
 </table></article>
     </section>
+
+
+
+
 
 
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MultiLanguageURL.html">MultiLanguageURL</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MultiLanguagesURL.html">MultiLanguagesURL</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu May 31 2018 00:04:11 GMT+0700 (RTZ 6 (зима))
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu May 31 2018 01:18:16 GMT+0700 (RTZ 6 (зима))
 </footer>
 
 <script> prettyPrint(); </script>
